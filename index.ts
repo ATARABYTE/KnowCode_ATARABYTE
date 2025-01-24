@@ -18,7 +18,7 @@ app.route("/api", apis);
 Bun.serve({
     port: port,
     fetch: (() => {
-        console.log(`server Start on http://localhost:${port}\n`)
+        console.log(`server Started on http://localhost:${port}\n`)
         return app.fetch
     })()
 })
