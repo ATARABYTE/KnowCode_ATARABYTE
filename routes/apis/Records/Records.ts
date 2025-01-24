@@ -1,7 +1,10 @@
 import { Hono } from "hono";
 import { Database } from "bun:sqlite";
+import Post from "./Post";
+import Put from "./Put";
+import Delete from "./Delete";
 import Get from "./Get";
-
+import GetById from "./GetById";
 
 const db = new Database("db/db.sqlite");
 
@@ -22,6 +25,9 @@ db.run(`
 const app = new Hono()
 
 app.get("/", (c) => Get(c, db));
-
+app.get("/:id", (c) => GetById(c, db));
+app.post("/", (c) => Post(c, db));
+app.put("/:id", (c) => Put(c, db));
+app.delete("/:id", (c) => Delete(c, db));
 
 export default app

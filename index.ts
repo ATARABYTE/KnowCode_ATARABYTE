@@ -6,15 +6,15 @@ const port = Bun.env.PORT || 3999
 
 const app = new Hono();
 
-
+// middlewares
 app.use(logger())
 
-
+// file endpoints
 app.route("/api", apis);
 
 
 
-
+// BUN SERVER TO SERVE THE APP
 Bun.serve({
     port: port,
     fetch: (() => {
