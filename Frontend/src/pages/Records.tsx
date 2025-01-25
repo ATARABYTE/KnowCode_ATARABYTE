@@ -155,8 +155,6 @@ function DataTables() {
                     <TableHead>Parent Pickup Code</TableHead>
                     <TableHead>Child Name</TableHead>
                     <TableHead>Timestamp</TableHead>
-                    <TableHead>Parent Image</TableHead>
-                    <TableHead>Child Image</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
@@ -169,8 +167,6 @@ function DataTables() {
                         <TableCell>{row.parent_pickup_code}</TableCell>
                         <TableCell>{row.child_name}</TableCell>
                         <TableCell>{row.timestamp}</TableCell>
-                        <TableCell>{row.parent_img_url}</TableCell>
-                        <TableCell>{row.parent_img_url}</TableCell>
                     </TableRow>
                 ))}
             </TableBody>

@@ -1,6 +1,8 @@
 import { Hono } from "hono";
+import frontendapp from "./routes/frontendapp";
 import apis from "./routes/apis/index";
 import { logger } from "hono/logger";
+import { serveStatic } from "hono/bun";
 
 const port = Bun.env.PORT || 3999
 
@@ -11,6 +13,8 @@ app.use(logger())
 
 // file endpoints
 app.route("/api", apis);
+app.route("/", frontendapp)
+app.get('/img/*', serveStatic({ root: 'assets' }))
 
 
 

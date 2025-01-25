@@ -13,6 +13,7 @@ export default async (c: any, db: Database) => {
         "child_name",
         "parent_img_url",
         "child_img_url",
+        "status"
     ];
 
     // Filter valid fields to update
